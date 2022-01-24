@@ -25,20 +25,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-
-@Composable
-fun Greeting() {
-    Text(
-        "hallo Android",
-        color = primaryColor
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    TemanSembuhTheme {
-        Greeting()
-    }
-}

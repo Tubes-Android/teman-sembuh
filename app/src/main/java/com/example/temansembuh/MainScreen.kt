@@ -18,13 +18,6 @@ fun MainScreen() {
     val navController = rememberNavController()
 
     Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text("Teman Sembuh")
-                }
-            )
-        },
         bottomBar = {
             BottomBar(navController = navController)
         }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "404761465212",
+    "project_id": "teman-sembuh",
+    "storage_bucket": "teman-sembuh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404761465212:android:1053cac28aeb58464454f9",
+        "android_client_info": {
+          "package_name": "com.example.temansembuh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "404761465212-77at5geodnetvtsbaoaorivkksqphi5e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCds1gdrE9dSuWaC4kOF_b5QCHLd_fVEL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "404761465212-77at5geodnetvtsbaoaorivkksqphi5e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

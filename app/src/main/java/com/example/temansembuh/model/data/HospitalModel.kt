@@ -7,8 +7,3 @@ data class HospitalModel(
     val phone: String,
     val provinces: String
 )
-
-//data class HospitalResponseModel(
-//    val status: Int,
-//    val hospitals: HospitalModel
-//)

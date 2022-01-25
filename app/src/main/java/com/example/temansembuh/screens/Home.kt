@@ -29,7 +29,9 @@ fun HomeScreen() {
     ) {
         Column {
             ChooseLocation()
+            dropDownMenuProvinces()
             dropDownMenu()
+            dropDownMenuIsCovid()
         }
         Button(
             onClick = {},
@@ -91,6 +93,99 @@ fun dropDownMenu() {
         }
     }
 }
+
+@Composable
+fun dropDownMenuProvinces() {
+    var expanded by remember { mutableStateOf(false) }
+    val suggestions = listOf("DKI Jakarta", "Jawa Timur", "Jawa Barat", "Jawa Tengah")
+    var selectedText by remember { mutableStateOf("") }
+
+    var textfieldSize by remember { mutableStateOf(Size.Zero) }
+    val icon = if (expanded)
+        Icons.Filled.KeyboardArrowUp
+    else
+        Icons.Filled.KeyboardArrowDown
+
+    Column(Modifier.padding(20.dp)) {
+        OutlinedTextField(
+            value = selectedText,
+            onValueChange = { selectedText = it },
+            modifier = Modifier
+                .fillMaxWidth()
+                .onGloballyPositioned { coordinates ->
+                    //This value is used to assign to the DropDown the same width
+                    textfieldSize = coordinates.size.toSize()
+                },
+            label = { Text("Provinsi") },
+            trailingIcon = {
+                Icon(icon, "contentDescription",
+                    Modifier.clickable { expanded = !expanded })
+            }
+        )
+        DropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false },
+            modifier = Modifier
+                .width(with(LocalDensity.current) { textfieldSize.width.toDp() })
+        ) {
+            suggestions.forEach { label ->
+                DropdownMenuItem(onClick = {
+                    selectedText = label
+                    expanded = false
+                }) {
+                    Text(text = label)
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun dropDownMenuIsCovid() {
+    var expanded by remember { mutableStateOf(false) }
+    val suggestions = listOf("Covid", "Non-Covid")
+    var selectedText by remember { mutableStateOf("") }
+
+    var textfieldSize by remember { mutableStateOf(Size.Zero) }
+    val icon = if (expanded)
+        Icons.Filled.KeyboardArrowUp
+    else
+        Icons.Filled.KeyboardArrowDown
+
+    Column(Modifier.padding(20.dp)) {
+        OutlinedTextField(
+            value = selectedText,
+            onValueChange = { selectedText = it },
+            modifier = Modifier
+                .fillMaxWidth()
+                .onGloballyPositioned { coordinates ->
+                    //This value is used to assign to the DropDown the same width
+                    textfieldSize = coordinates.size.toSize()
+                },
+            label = { Text("Jenis Rumah Sakit") },
+            trailingIcon = {
+                Icon(icon, "contentDescription",
+                    Modifier.clickable { expanded = !expanded })
+            }
+        )
+        DropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false },
+            modifier = Modifier
+                .width(with(LocalDensity.current) { textfieldSize.width.toDp() })
+        ) {
+            suggestions.forEach { label ->
+                DropdownMenuItem(onClick = {
+                    selectedText = label
+                    expanded = false
+                }) {
+                    Text(text = label)
+                }
+            }
+        }
+    }
+}
+
 
 
 @Composable

@@ -2,6 +2,7 @@ package com.example.temansembuh.screens
 
 import androidx.compose.foundation.background
 import androidx.activity.viewModels
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,28 +28,21 @@ fun ProfileScreen() {
         modifier = Modifier
             .fillMaxSize()
             .background(Color.White),
+        verticalArrangement = Arrangement.Center
     ) {
         if (result.isNotEmpty()) {
             for (user in result) {
-                Text(
-                    text = "Nama: ${user.name}",
-                    style = MaterialTheme.typography.body1,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = "Email: ${user.email}",
-                    style = MaterialTheme.typography.body1,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = "Phones: ${user.phones}",
-                    style = MaterialTheme.typography.body1,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = "Address: ${user.address}",
-                    style = MaterialTheme.typography.body1,
-                    fontWeight = FontWeight.Bold
+//                profileList(
+//                    name = user.name,
+//                    email = user.email,
+//                    phones = user.phones,
+//                    address = user.address
+//                )
+                profileList(
+                    name = "Widadi",
+                    email = "Widadi@gmail.com",
+                    phones = "081234542164",
+                    address = "Jl. Bugbugfixes-final-edition"
                 )
             }
         } else {
@@ -62,9 +56,45 @@ fun ProfileScreen() {
 }
 
 @Composable
+fun profileList(
+    name: String,
+    email: String,
+    phones: String,
+    address: String,
+) {
+    Column {
+        Text(
+            text = "Nama: ${name}",
+            style = MaterialTheme.typography.body1,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = "Email: ${email}",
+            style = MaterialTheme.typography.body1,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = "Phones: ${phones}",
+            style = MaterialTheme.typography.body1,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = "Address: ${address}",
+            style = MaterialTheme.typography.body1,
+            fontWeight = FontWeight.Bold
+        )
+    }
+}
+
+@Composable
 @Preview
 fun ProfileScreenPreview() {
     TemanSembuhTheme {
-        ProfileScreen()
+        profileList(
+            name = "Widadi",
+            email = "Widadi@gmail.com",
+            phones = "081234542164",
+            address = "Jl. Bugbugfixes-final-edition"
+        )
     }
 }

@@ -19,9 +19,9 @@ fun BottomNavGraph(navController: NavHostController) {
         composable(route = BottomBarScreen.Hospital.route) {
             HospitalScreen()
         }
-        composable(route = BottomBarScreen.Bed.route) {
-            BedScreen()
-        }
+//        composable(route = BottomBarScreen.Bed.route) {
+//            BedScreen()
+//        }
         composable(route = BottomBarScreen.Profile.route) {
             ProfileScreen()
         }

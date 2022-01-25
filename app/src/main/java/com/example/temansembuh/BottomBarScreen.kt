@@ -30,9 +30,9 @@ sealed class BottomBarScreen(
         icon = Icons.Default.Place
     )
 
-    object Bed: BottomBarScreen(
-        route = "bed",
-        title = "Bed",
-        icon = Icons.Default.Favorite
-    )
+//    object Bed: BottomBarScreen(
+//        route = "bed",
+//        title = "Bed",
+//        icon = Icons.Default.Favorite
+//    )
 }
